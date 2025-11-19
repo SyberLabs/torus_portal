@@ -216,9 +216,12 @@
       document.querySelector('.manifesto').style.opacity = '1';
       document.querySelector('.manifesto').style.transform = 'translateY(0)';
       document.querySelector('.manifesto').style.transition = '3s cubic-bezier(0.23,1,0.32,1)';
+      document.querySelector('.enter').style.transition = 'opacity 1s, height 1s, margin 1s'; // Add height/margin transition
       document.querySelector('.enter').style.opacity = '0';
-      setTimeout(() => document.querySelector('.enter').remove(), 2000);
-    }
+      document.querySelector('.enter').style.height = '0';
+      document.querySelector('.enter').style.margin = '0';
+      setTimeout(() => document.querySelector('.enter').remove(), 1000); // Shorten timeout to match new transitions
+      }
 
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
